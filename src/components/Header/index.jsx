@@ -16,7 +16,7 @@ import {
         <Wrapper>
             <Container>
                 <Row>
-                    <img src="../../assets/logo-dio.png" alt="Logo da dio"/>
+                    <img src="https://lp.dio.me/wp-content/uploads/2022/03/Group-1.png" alt="Logo da dio"/>
                     <BuscarInputContainer>
                         <Input placeholder="Buscar..." />
                     </BuscarInputContainer>

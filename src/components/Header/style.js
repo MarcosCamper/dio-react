@@ -8,8 +8,8 @@ export const Container = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 auto;
-
+    margin: 0 120px;
+    
 `
 
 export const Row = styled.div`
@@ -23,6 +23,7 @@ export const Column = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
+    
 `
 
 export const Wrapper = styled.div`
@@ -31,7 +32,7 @@ export const Wrapper = styled.div`
     height: 47px;
     display: flex;
     justify-content: center;
-    align-items: center;
+   
 `
 
 export const BuscarInputContainer = styled.div`
