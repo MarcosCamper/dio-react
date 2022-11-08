@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {
     Container,
     TextContent,
@@ -6,12 +6,17 @@ import {
     Title
 
 } from './styles'
+
 import { Button } from "../../components/Button";
 import { Header } from "../../components/Header";
 //TODO: Importar Banner
 
 
 const Home = () => {
+    const navigate = useNavigate();
+    const handleClickSignIn = () => {
+        navigate('/login')
+    }
     return (<>
     <Header/>
     <Container>
@@ -28,7 +33,7 @@ const Home = () => {
                 Domine as tecnologias utilizadas pelas empresas mais inovadoras do mundo e encare seu novo
                  desafio profissional, evoluindo em comunidade com os melhores experts.
             </TextContent>
-            <Button title="Comecar agora" variant="secundary" onClick={() => null}/>
+            <Button title="Comecar agora" variant="secundary" onClick={handleClickSignIn}/>
         </div>
         <div>
             <img src="https://assets-staging.fusoesaquisicoes.com/uploads/2022/01/DIO.png" alt="Imagem principal" />

@@ -15,7 +15,7 @@ import { Card } from "../../components/Card";
 
 const Feed = () => {
     return (<>
-    <Header/>
+    <Header autenticado={true}/>
     <Container>
         <Column flex={3}>
             <Title>Feed</Title>

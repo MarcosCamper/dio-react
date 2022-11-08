@@ -1,4 +1,5 @@
 import { MdEmail, MdPassword } from "react-icons/md";
+import { useNavigate } from 'react-router-dom';
 import {
     Column,
     Container,
@@ -21,6 +22,11 @@ import { Header } from "../../components/Header";
 
 
 const Login = () => {
+
+    const navigate = useNavigate();
+    const handleClickSignIn = () => {
+        navigate('/feed')
+    }
     return (<>
     <Header/>
     <Container>
@@ -38,7 +44,7 @@ const Login = () => {
                 <form>
                     <Input placeholder="Email" leftIcon={<MdEmail/>}/>
                     <Input placeholder="Senha" type="password" leftIcon={<MdPassword/>}/>
-                    <Button title="Entrar" variant="secundary"/>
+                    <Button title="Entrar" variant="secundary" onClick={handleClickSignIn} type="button"/>
                 </form>
                 <Row>
                     <EsqueciText>Esqueci minha senha</EsqueciText>
