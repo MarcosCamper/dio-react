@@ -4,7 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import {    Column,  Container, CriarText, EsqueciText, Row, SubTitleLogin, Title, TitleLogin, Wrapper} from './styles'
-
+import { api } from '../../services/api'
 
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
@@ -18,20 +18,32 @@ const schema = yup.object({
 
 const Login = () => {
 
-    const { control, handleSubmit, formState: { errors, isValid } } = useForm({
+    const navigate = useNavigate();
+
+    const { control, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(schema),
         mode: 'onChange',
 
     });
+// O usuário está logando mesmo com a senha errada, basta passar o login correto // 
+    const onSubmit = async formData => {
+        try{
+            const { data } = await api.get(`users?email=${formData.email}&users?senha=${formData.senha}`);
+            if(data.length === 1){
+                navigate('/feed');
+                console.log(data);
+            }else{
+                alert('Email ou senha inválido');
+            };
 
-    console.log(isValid, errors);
+        }catch{
+            alert('Houve um erro, tente novamente')
+        }
 
-    const onSubmit = data => console.log(data);
+    }; 
 
-    const navigate = useNavigate();
-    const handleClickSignIn = () => {
-        navigate('/feed')
-    }
+
+
     return (<>
     <Header/>
     <Container>
