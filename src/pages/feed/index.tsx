@@ -10,6 +10,7 @@ import {
 import { Header } from "../../components/Header";
 import { UserInfo } from "../../components/UserInfo";
 import { Card } from "../../components/Card";
+import React from 'react';
 
 
 
@@ -17,7 +18,7 @@ const Feed = () => {
     return (<>
     <Header autenticado={true}/>
     <Container>
-        <Column flex={3}>
+        <Column flex ={3}>
             <Title>Feed</Title>
             <Card />
             <Card />

@@ -22,8 +22,8 @@ export const Column = styled.div`
 
   export const Row = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: right;
+  
   align-items: center;
   margin-top: 20px;
   `
@@ -55,25 +55,27 @@ export const Title = styled.h2`
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
-  margin-bottom: 35px;
+  margin-bottom: 10px;
   line-height: 25px;
  
   `
-  export const EsqueciText = styled.p`
+  export const FazerLogin = styled.p`
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
   line-height: 19px;
-  color: #E5e044;
+  color: #FFFFFF;
  
-  `  
-  export const CriarText = styled.p`
+  `
+  export const ClicarLogin = styled.p`
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
   line-height: 19px;
-  color: #E23DD7;
+  color: #23DD7A;
+  cursor: pointer;
+  margin-left: 10px;
  
-  ` 
+  `

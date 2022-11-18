@@ -9,6 +9,7 @@ import {
 
 import { Button } from "../../components/Button";
 import { Header } from "../../components/Header";
+import React from 'react';
 //TODO: Importar Banner
 
 
@@ -18,7 +19,7 @@ const Home = () => {
         navigate('/login')
     }
     return (<>
-    <Header/>
+    <Header autenticado={false}/>
     <Container>
         <div>
             <Title>

@@ -9,6 +9,8 @@ import { api } from '../../services/api'
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 import { Header } from "../../components/Header";
+import { IFormData } from "./types";
+import React from "react";
 
 
 const schema = yup.object({
@@ -17,10 +19,13 @@ const schema = yup.object({
   }).required();
 
 const Login = () => {
+    const handleClickSignIn = () => {
+        navigate('/cadastro')
+    };  
 
     const navigate = useNavigate();
 
-    const { control, handleSubmit, formState: { errors } } = useForm({
+    const { control, handleSubmit, formState: { errors } } = useForm<IFormData>({
         resolver: yupResolver(schema),
         mode: 'onChange',
 
@@ -45,7 +50,7 @@ const Login = () => {
 
 
     return (<>
-    <Header/>
+    <Header autenticado={false}/>
     <Container>
         <Column>
             <Title>
@@ -65,7 +70,7 @@ const Login = () => {
                 </form>
                 <Row>
                     <EsqueciText>Esqueci minha senha</EsqueciText>
-                    <CriarText>Criar Conta</CriarText>
+                    <CriarText onClick={handleClickSignIn}>Criar Conta</CriarText>
                 </Row>
             </Wrapper>
             
